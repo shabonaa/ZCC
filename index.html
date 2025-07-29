@@ -1,0 +1,62 @@
+
+{{#context}}
+    {
+      "mycust": 
+      {
+        "collection": "customer-db",
+        "query": { "$or": [ { "ID": "{{params.ID}}" }, { "phonenumber": "{{params.phonenumber}}" } ] },
+          "hints": {}
+      }
+    }
+{{/context}}
+
+    <html>
+        <h1>Customer Information Below:</h1>
+             <ul>
+                {{#each mycust}}
+                <li>
+                    First Name: {{firstname}}
+                </li>
+                <li>
+                    Last Name: {{lastname}}
+                </li>
+                <li>
+                    ID Number: {{ID}}
+                </li>
+                <li>
+                    Phone Number: {{phonenumber}}
+                </li>
+                <li>
+                    PIN: {{pin}}
+                </li>
+                <li>
+                    Balance: {{money}}
+                </li>
+                <li>
+                    Account #: {{account}}
+                </li>
+                <li>
+                    Tier: {{tier}}
+                </li>
+                <li>
+                    <p> </p>
+                     <img src="https://zccdb-cc55.restdb.io/media/{{profilePIC}}"  width="256" height="128">
+                     <p> </p>
+                </li>
+                
+                {{/each}}            
+            </ul>
+<img src="https://explore.zoom.us/media/0996a292-c969-442a-94d7-d8fb512a4a69.png" alt="HTML5 Icon" width="256" height="128">
+<script data-apikey="nJp4BwTKTbinYCrdKPNmCQ" data-env="us01" src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"></script>
+
+</body>
+       <style> body {
+  color:white;
+  background-image: url('https://blog.zoom.us/wp-content/uploads/2023/09/Zoomtopia-blog.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+} </style> 
+    </html>
+
+
